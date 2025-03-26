@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text as RNText, StyleSheet, TextProps } from 'react-native';
-import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
+import { useTheme } from '../theme/ThemeProvider';
 
 interface CustomTextProps extends TextProps {
   type?: 'header' | 'subheader' | 'body' | 'caption' | 'listText';
@@ -16,11 +16,9 @@ const Text: React.FC<CustomTextProps> = ({ children, type = 'body', marginBottom
   const textStyle = styles[type] || styles.body;
 
   return (
-    <ThemeProvider>
     <RNText style={[themeStyles.text, textStyle, style, { marginBottom: marginBottom && marginBottom >= 0 ? marginBottom : type === 'caption' ? 10 : 20}]} {...props}>
       {children}
     </RNText>
-    </ThemeProvider>
   );
 };
 

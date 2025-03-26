@@ -1,17 +1,15 @@
 import React from 'react';
 import { TextInput, StyleSheet, TextInputProps } from 'react-native';
-import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
+import { useTheme } from '../theme/ThemeProvider';
 
 const Input: React.FC<TextInputProps> = (props) => {
   const { themeStyles } = useTheme();
 
   return (
-    <ThemeProvider>
     <TextInput
       style={[styles.input, themeStyles.text, themeStyles.container]}
       {...props}
     />
-    </ThemeProvider>
   );
 };
 
