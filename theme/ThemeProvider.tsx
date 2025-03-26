@@ -1,8 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { View, Text, Button, StyleSheet, StyleProp, ViewStyle, TextStyle } from 'react-native';
-import { useFonts, Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
-import { FiraSans_400Regular, FiraSans_700Bold } from '@expo-google-fonts/fira-sans';
-import { FiraCode_400Regular } from '@expo-google-fonts/fira-code';
 
 // Define types for the theme
 type Theme = 'light' | 'dark';
@@ -26,27 +23,12 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 // ThemeProvider component
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [fontsLoaded] = useFonts({
-    Lato_400Regular,
-    Lato_700Bold,
-    FiraSans_400Regular,
-    FiraSans_700Bold,
-    FiraCode_400Regular
-  });
 
   const [theme, setTheme] = useState<Theme>('light');
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
-
-  if (!fontsLoaded) {
-    return (
-      <View style={styles.loadingContainer}>
-        <Text>Loading Fonts...</Text>
-      </View>
-    );
-  }
 
   // Dynamically assign styles based on the current theme
   const themeStyles: ThemeStyles =

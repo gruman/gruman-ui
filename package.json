@@ -1,6 +1,6 @@
 {
   "name": "gruman-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A lightweight React component library providing customizable UI components with universal theming support, including Buttons, Alerts, Images, and Containers for rapid development.",
   "main": "index.ts",
   "scripts": {
