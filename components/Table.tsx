@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from '../theme/ThemeProvider';
-import { Prop } from '../../constants/types';
+import { Prop } from '../constants/types';
 
 interface TableProps {
   headers: string[];

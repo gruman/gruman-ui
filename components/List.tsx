@@ -1,11 +1,10 @@
 import React from 'react';
 import { FlatList, StyleSheet, View, Pressable } from 'react-native';
 import { useTheme } from '../theme/ThemeProvider';
-import { Item } from '../../constants/types';
-import { Text } from '../../gruman-ui-rn'
+import Text from './Text'
 
 interface ListProps {
-  data: Item[];
+  data: any[];
   deleteButton?: (id: string) => void;
 }
 
