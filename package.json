@@ -1,6 +1,6 @@
 {
   "name": "gruman-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight React component library providing customizable UI components with universal theming support, including Buttons, Alerts, Images, and Containers for rapid development.",
   "main": "index.ts",
   "scripts": {
@@ -20,13 +20,18 @@
   "bugs": {
     "url": "git+https://github.com/gruman/gruman-ui"
   },
-  "homepage": "https://matthewgruman.com/gruman-ui",
+  "homepage": "https://ui.matthewgruman.com",
   "devDependencies": {
-    "typescript": "^4.0.0",
-    "eslint": "^7.0.0"
+    "eslint": "^7.0.0",
+    "typescript": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": "^0.78.1"
   }
 }
