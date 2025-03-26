@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
+import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
 
 interface AlertProps {
   message: string;
@@ -15,9 +15,11 @@ const Alert: React.FC<AlertProps> = ({ message, type = 'default' }) => {
   const textStyle = [themeStyles.text, styles[`${type}Text`]];
 
   return (
+    <ThemeProvider>
     <View style={styles.alert}>
       <Text style={styles.text}>{message}</Text>
     </View>
+    </ThemeProvider>
   );
 };
 

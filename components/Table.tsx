@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
+import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
 import { Prop } from '../constants/types';
 
 interface TableProps {
@@ -12,6 +12,7 @@ const Table: React.FC<TableProps> = ({ headers, data }) => {
   const { themeStyles } = useTheme();
 
   return (
+    <ThemeProvider>
     <View style={styles.table}>
       <View style={[styles.row, styles.headers]}>
         {headers.map((header, index) => (
@@ -27,6 +28,7 @@ const Table: React.FC<TableProps> = ({ headers, data }) => {
         </View>
       ))}
     </View>
+    </ThemeProvider>
   );
 };
 

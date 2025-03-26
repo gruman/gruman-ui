@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text as RNText, StyleSheet, TextProps, View, Platform } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
+import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
 
 interface CustomTextProps extends TextProps {
 }
@@ -10,11 +10,13 @@ const Code: React.FC<CustomTextProps> = ({ children, style, ...props }) => {
 
 
   return (
+    <ThemeProvider>
     <View style={styles.container}>
     <RNText style={[styles.text, style]} {...props}>
       {children}
     </RNText>
     </View>
+    </ThemeProvider>
   );
 };
 

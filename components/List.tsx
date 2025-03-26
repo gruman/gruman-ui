@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View, Pressable } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
+import { useTheme, ThemeProvider } from '../theme/ThemeProvider';
 import Text from './Text'
 
 interface ListProps {
@@ -13,6 +13,7 @@ const List: React.FC<ListProps> = ({ data, deleteButton }) => {
   const ListItem = (item: any) => {
 
     return (
+      <ThemeProvider>
       <View style={styles.listItem}>
         <View>
         <Text type="subheader">
@@ -29,6 +30,7 @@ const List: React.FC<ListProps> = ({ data, deleteButton }) => {
           </Pressable>
         }
       </View>
+      </ThemeProvider>
     )
   }
 
