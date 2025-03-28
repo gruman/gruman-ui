@@ -1,12 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, ViewProps } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
 
 const Container: React.FC<ViewProps> = ({ children, style, ...props }) => {
-  const { themeStyles } = useTheme();
 
   return (
-    <View style={[styles.container, themeStyles.container, style]} {...props}>
+    <View style={[styles.container, style]} {...props}>
       {children}
     </View>
   );

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Text as RNText, StyleSheet, TextProps, View, Platform } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
 
 interface CustomTextProps extends TextProps {
 }
 
 const Code: React.FC<CustomTextProps> = ({ children, style, ...props }) => {
-  const { themeStyles } = useTheme();
 
 
   return (

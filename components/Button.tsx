@@ -1,6 +1,5 @@
 import React from 'react';
 import { Pressable, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
 
 interface ButtonProps {
   title: string;
@@ -9,14 +8,13 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ title, onPress, marginBottom }) => {
-  const { themeStyles } = useTheme();
 
   return (
     <Pressable
-      style={[styles.button, themeStyles.container, themeStyles.reverseContainer,{ marginBottom: marginBottom && marginBottom >= 0 ? marginBottom : 20}]}
+      style={[styles.button,{ marginBottom: marginBottom && marginBottom >= 0 ? marginBottom : 20}]}
       onPress={onPress}
     >
-      <Text style={themeStyles.reverseText}>{title}</Text>
+      <Text>{title}</Text>
     </Pressable>
   );
 };

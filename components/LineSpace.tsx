@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
 
 const LineSpace: React.FC = () => {
-  const { themeStyles } = useTheme();
 
   return (
     <View style={styles.lineBreak} />

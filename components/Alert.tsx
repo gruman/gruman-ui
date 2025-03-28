@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme } from '../theme/ThemeProvider';
 
 interface AlertProps {
   message: string;
@@ -8,11 +7,6 @@ interface AlertProps {
 }
 
 const Alert: React.FC<AlertProps> = ({ message, type = 'default' }) => {
-  const { themeStyles } = useTheme();
-
-  // Determine styles dynamically based on alert type
-  const alertStyle = [styles.alert, styles[type]];
-  const textStyle = [themeStyles.text, styles[`${type}Text`]];
 
   return (
     <View style={styles.alert}>
