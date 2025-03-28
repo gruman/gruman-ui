@@ -8,7 +8,7 @@ interface CustomTextProps extends TextProps {
 
 const Text: React.FC<CustomTextProps> = ({ children, type = 'body', marginBottom, style, ...props }) => {
 
-  console.log(marginBottom)
+  console.log(children)
 
   // Additional styles based on `type`
   const textStyle = styles[type] || styles.body;
